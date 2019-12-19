@@ -1,0 +1,12 @@
+---
+- name: TEST THE PING TO ROUTER 4
+  hosts: cisco-router-1
+  connection: network_cli
+  gather_facts: no
+  
+  tasks:
+    - name: Run ping to rtr4
+      register: ping_result
+      ios_command: 
+        commands: 
+          - "ping 10.0.100.21"
