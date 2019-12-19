@@ -9,7 +9,7 @@
       ios_config:
         backup: yes
         backup_options:
-          dir_path: /routerbackup
+          dir_path: /routerbackup/backup
       register: config_output
 
     - name: RENAME BACKUP
