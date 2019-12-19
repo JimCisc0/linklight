@@ -8,14 +8,14 @@
     - name: GATHER ROUTER FACTS
       ios_facts:
 
-    - name: RENDER FACTS AS A REPORT
+    - name: RENDER FACTS AS A REPORT USING JINJA2 template
       template:
-        src: os_report.j2
-        dest: reports/{{ inventory_hostname }}.md
+        src: /routerinfo/template/os_report.j2
+        dest: /routerinfo/reports/{{ inventory_hostname }}.md
 
     - name: CONSOLIDATE THE IOS DATA
       assemble:
-        src: reports/
-        dest: network_os_report.md
+        src: /routerinfo/reports
+        dest: //routerinfo/network_os_report.md
       delegate_to: localhost
       run_once: yes
