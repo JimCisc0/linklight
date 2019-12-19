@@ -1,0 +1,13 @@
+---
+- name: DEMO OF BANNER CONFIGURATION CHANGES
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: Configure the IOS login Banner 
+      ios_banner:
+        text: |
+          This is a banner update by Devoteam
+        state: present
+       
